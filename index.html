@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app lang="pt-BR">
+  <head>
+  	<title>Google Analytics Event Builder | Content Hackers</title>
+  	<meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+    <!-- Custom Javascript -->
+    <script type="text/javascript" src="js/EventGenerator.js"></script>
+
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body ng-app="event-builder">
+
+	  <nav class="grey darken-3">
+	    <div class="nav-wrapper container">
+	      <a href="#" class="brand-logo"><img class="valign-wrapper" style="height:55px" src="https://contentanalyst.pipz.io/shared/112/files/contenthackers_branco.png"></a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="sass.html">Sass</a></li>
+	        <li><a href="badges.html">Components</a></li>
+	        <li><a href="collapsible.html">JavaScript</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+
+		<div class="container">
+			<div class="section">
+				<h3 class="center-align">Gerador de Eventos do Google Analytics</h3>
+			</div>
+		    <div class="section">
+		    	<div class="row">
+		    		    <form class="col s12">
+		    		      <div class="row">
+		    		        <div class="input-field col s6">
+		    		          <input ng-model="category" placeholder="Categoria" id="category" type="text">
+		    		          <label for="category">Categoria</label>
+		    		        </div>
+		    		        <div class="input-field col s6">
+		    		          <input ng-model="action" placeholder="Ação" id="action" type="text">
+		    		          <label for="action">Ação</label>
+		    		        </div>
+		    		        </div>
+		    		        <div class="row">
+		    		        <div class="input-field col s6">	
+		    		          <input ng-model="label" placeholder="Etiqueta" id="label" type="text">
+		    		          <label for="label">Etiqueta</label>
+		    		        </div>
+		    		        <div class="input-field col s6">
+		    		          <input ng-model="value" placeholder="Valor" id="value" type="text">
+		    		          <label for="value">Valor</label>
+		    		        </div>
+		    		    	</div>
+		    		    	<div class="row">
+		    	        	<label for="compact">
+								<input ng-model="compact" id="compact" type="checkbox" checked="checked">
+								<span>Versão compacta</span>
+							</label>
+      						<label for="link">
+					       		<input ng-model="link" id="link" type="checkbox" checked="checked">
+					       		<span>Transformar em link</span>
+					       	</label>
+					    </div>
+					    </form>
+      					</div>
+		    		  </div>
+		    		  <div class="section">
+		    	      <div class="row">
+		    	        <div class="input-field col s12">
+		    	          <input readonly="readonly" value="ga('send', 'event', { eventCategory: '{{category}}', eventAction: '{{action}}', eventLabel: '{{label}}', eventValue: '{{value}}' });" id="event" type="text">
+		    	          <label for="event">Seu evento personalizado</label>
+		    	        </div>
+		    	        <div class="col s6">
+		    	        <a class="white-text orange waves-effect waves-light btn"><i class="material-icons right">file_copy</i>Copy</a>	
+		    	        </div>
+		    	      </div>
+		    		</div>
+		    	</div>
+
+        <footer class="page-footer grey darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Sobre nós</h5>
+                <p class="grey-text text-lighten-4">O <strong>Content Hackers</strong> busca incentivar a comunidade de profissionais de conteúdo, por meio do compartilhamento de conhecimento técnico e analítico em marketing de conteúdo.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Navegação</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://contenthackers.com.br/#inicio">Homepage</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://contenthackers.com.br/blog/">Conteúdo</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://contenthackers.com.br/#consultoria">Fale com um consultor</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 Feito com ♥ em Florianópolis
+            <a class="grey-text text-lighten-4 right" href="https://contenthackers.com.br/">Mais links</a>
+            </div>
+          </div>
+        </footer>
+    </body>
+  </html>
