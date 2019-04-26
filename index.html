@@ -36,51 +36,53 @@
 
 		<div class="container">
 			<div class="section">
-				<h3 class="center-align">Gerador de Eventos do Google Analytics</h3>
+				<h3 class="center-align">Gerador de Links e Parâmetros UTMs</h3>
 			</div>
 		    <div class="section">
 		    	<div class="row">
 		    		    <form class="col s12">
 		    		      <div class="row">
+		    		      	<div class="input-field col s12">
+		    		      	  <input ng-model="url" placeholder="URL" id="url" type="text">
+		    		      	  <label for="url">URL</label>
+		    		      	</div>
 		    		        <div class="input-field col s6">
-		    		          <input ng-model="category" placeholder="Categoria" id="category" type="text">
-		    		          <label for="category">Categoria</label>
+		    		          <input ng-model="utm_source" placeholder="UTM Source" id="utm_source" type="text">
+		    		          <label for="utm_source">UTM Source</label>
 		    		        </div>
 		    		        <div class="input-field col s6">
-		    		          <input ng-model="action" placeholder="Ação" id="action" type="text">
-		    		          <label for="action">Ação</label>
+		    		          <input ng-model="utm_medium" placeholder="UTM Medium" id="utm_medium" type="text">
+		    		          <label for="utm_medium">UTM Medium</label>
 		    		        </div>
 		    		        </div>
 		    		        <div class="row">
 		    		        <div class="input-field col s6">	
-		    		          <input ng-model="label" placeholder="Etiqueta" id="label" type="text">
-		    		          <label for="label">Etiqueta</label>
+		    		          <input ng-model="utm_date" placeholder="Data (AAAA-MM-DD)" id="utm_date" type="text">
+		    		          <label for="utm_date">Data (AAAA-MM-DD)</label>
 		    		        </div>
-		    		        <div class="input-field col s6">
-		    		          <input ng-model="value" placeholder="Valor" id="value" type="text">
-		    		          <label for="value">Valor</label>
+		    		        <div class="input-field col s6">	
+		    		          <input ng-model="utm_campaign" placeholder="UTM Campaign" id="utm_campaign" type="text">
+		    		          <label for="utm_campaign">UTM Campaign</label>
+		    		        </div>
+		    		        <div class="input-field col s6">	
+		    		          <input ng-model="utm_content" placeholder="UTM Content" id="utm_content" type="text">
+		    		          <label for="utm_content">UTM Content</label>
+		    		        </div>
+		    		        <div class="input-field col s6">	
+		    		          <input ng-model="utm_term" placeholder="UTM Term" id="utm_term" type="text">
+		    		          <label for="utm_term">UTM Term</label>
 		    		        </div>
 		    		    	</div>
-		    		    	<div class="row">
-		    	        	<label for="compact">
-								<input ng-model="compact" id="compact" type="checkbox" checked="checked">
-								<span>Versão compacta</span>
-							</label>
-      						<label for="link">
-					       		<input ng-model="link" id="link" type="checkbox" checked="checked">
-					       		<span>Transformar em link</span>
-					       	</label>
-					    </div>
 					    </form>
       					</div>
 		    		  </div>
 		    		  <div class="section">
 		    	      <div class="row">
-		    	        <div class="input-field col s12">
-		    	          <input readonly="readonly" value="ga('send', 'event', { eventCategory: '{{category}}', eventAction: '{{action}}', eventLabel: '{{label}}', eventValue: '{{value}}' });" id="event" type="text">
-		    	          <label for="event">Seu evento personalizado</label>
+		    	        <div class="input-field col s9">
+		    	          <input readonly="readonly" value="{{url}}?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_date}}-{{utm_campaign}}&utm_content={{utm_content}}" id="final_url" type="text">
+		    	          <label for="final_url">Sua URL com parâmetros UTMs</label>
 		    	        </div>
-		    	        <div class="col s6">
+		    	        <div class="col s3">
 		    	        <a class="white-text orange waves-effect waves-light btn"><i class="material-icons right">file_copy</i>Copy</a>	
 		    	        </div>
 		    	      </div>
